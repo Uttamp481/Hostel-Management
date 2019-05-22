@@ -28,7 +28,9 @@ public class Hostel{
                
            }finally{
                out.close();
+               
            }
+           
 	   }
 	   public static boolean readData(String name) {
 		   try{
@@ -71,6 +73,7 @@ public class Hostel{
                     if(splited[1].equals(reg) ){
                         return false;
                     }
+                    br.close();
                 }
             }catch(Exception e){
                 System.out.println(e);
@@ -93,7 +96,9 @@ public class Hostel{
             System.out.println("Enter the student name:(Type exit to exit) ");
             name = sc.nextLine();
             return name;
+            
         }
+	
 
 
     public static void main(String args[])throws IOException {
