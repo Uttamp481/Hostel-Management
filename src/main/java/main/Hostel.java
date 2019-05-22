@@ -84,7 +84,7 @@ public class Hostel{
        public static boolean verifyName(String name){
     	   boolean chk = true;
     	   
-    	  chk = readData(name); //write your code here
+    	  chk = readData(name); //write your code here and have fun
     	   
     	   return chk;
         }
@@ -141,4 +141,5 @@ public class Hostel{
         }
        allotHostel();
     }
+   
 }
