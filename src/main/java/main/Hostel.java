@@ -47,11 +47,17 @@ public class Hostel{
 	            }catch(Exception e){
 	                System.out.println(e);
 	            }
-			return true;
+			return false;
 	   }
        public static void allotHostel(){
-    	   //write your code here!!!
-    	   
+    	  //write your code here!!!
+    	   try
+    	   {
+    		   writedata();
+    	   }catch(IOException e)
+    	   {
+    		   System.out.println(e);
+    	   }
        }
 
        public static boolean verifyStudent(int regNo){
@@ -75,7 +81,7 @@ public class Hostel{
        public static boolean verifyName(String name){
     	   boolean chk = true;
     	   
-    	   //write your code here
+    	  chk = readData(name); //write your code here
     	   
     	   return chk;
         }
