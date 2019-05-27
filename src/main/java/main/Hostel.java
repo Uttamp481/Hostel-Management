@@ -28,9 +28,7 @@ public class Hostel{
                
            }finally{
                out.close();
-               
            }
-           
 	   }
 	   public static boolean readData(String name) {
 		   try{
@@ -40,9 +38,13 @@ public class Hostel{
 	               //write your code here !!!
 	               while ((line = br.readLine()) != null) {
 		               String[] splited = line.split("\\s+");
-		               String checkName = splited[0];
+		               String checkName = name;
 		               //write your code here !!!
-//		               compare check name with name and return true if present and false if not
+//   compare check name with name and return true if present and false if not
+		               if(splited[0].equals(name))
+		               {
+		            	   return true;
+		               }
 	               }
 	               
 	               
@@ -52,7 +54,7 @@ public class Hostel{
 			return false;
 	   }
        public static void allotHostel(){
-    	  //write your code here!!!
+    	   //write your code here!!!
     	   try
     	   {
     		   writedata();
@@ -60,6 +62,7 @@ public class Hostel{
     	   {
     		   System.out.println(e);
     	   }
+    	   
        }
 
        public static boolean verifyStudent(int regNo){
@@ -73,7 +76,6 @@ public class Hostel{
                     if(splited[1].equals(reg) ){
                         return false;
                     }
-                    br.close();
                 }
             }catch(Exception e){
                 System.out.println(e);
@@ -84,7 +86,8 @@ public class Hostel{
        public static boolean verifyName(String name){
     	   boolean chk = true;
     	   
-    	  chk = readData(name); //write your code here and have fun
+    	   //write your code here
+    	   chk = readData(name);
     	   
     	   return chk;
         }
@@ -96,9 +99,7 @@ public class Hostel{
             System.out.println("Enter the student name:(Type exit to exit) ");
             name = sc.nextLine();
             return name;
-            
         }
-	
 
 
     public static void main(String args[])throws IOException {
@@ -141,5 +142,4 @@ public class Hostel{
         }
        allotHostel();
     }
-   
 }
